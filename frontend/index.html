@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripe Payment Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="payment-card">
+      <h1>Secure Payment</h1>
+      <p class="subtitle">Enter your payment details below</p>
+
+      <div class="form-group">
+        <label for="amount">Amount (USD)</label>
+        <div class="amount-input-group">
+          <span class="currency-symbol">$</span>
+          <input 
+            type="number" 
+            id="amount" 
+            placeholder="0.00" 
+            min="0.50" 
+            step="0.01"
+            class="amount-input"
+          >
+        </div>
+        <small class="help-text">Minimum: $0.50</small>
+      </div>
+
+      <form id="payment-form">
+        <div class="form-group">
+          <label for="card-element">Card Details</label>
+          <div id="card-element" class="stripe-element"></div>
+          <div id="card-errors" class="error-message" role="alert"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              placeholder="John Doe"
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="john@example.com"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input 
+              type="text" 
+              id="address" 
+              placeholder="123 Main St"
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input 
+              type="text" 
+              id="city" 
+              placeholder="New York"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="state">State/Province</label>
+            <input 
+              type="text" 
+              id="state" 
+              placeholder="NY"
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip/Postal Code</label>
+            <input 
+              type="text" 
+              id="zip" 
+              placeholder="10001"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country Code</label>
+          <input 
+            type="text" 
+            id="country" 
+            placeholder="US (2-character code)"
+            maxlength="2"
+            required
+          >
+          <small class="help-text">Use 2-character code: US, GB, CA, AU, DE, etc.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Order Description (Optional)</label>
+          <input 
+            type="text" 
+            id="description" 
+            placeholder="e.g., Premium Subscription"
+          >
+        </div>
+
+        <button type="submit" id="submit-btn" class="submit-btn">
+          <span id="button-text">Pay Now</span>
+          <span id="spinner" class="spinner hidden"></span>
+        </button>
+
+        <div id="payment-message" class="payment-message hidden"></div>
+      </form>
+
+      <div id="processing-status" class="processing-status hidden">
+        <p>Processing your payment...</p>
+      </div>
+    </div>
+
+    <div id="status-indicator" class="status-indicator hidden"></div>
+  </div>
+
+  <script src="payment-form.js"></script>
+</body>
+</html>
