@@ -2,6 +2,7 @@
 
 Stripe payment integration. Node.js backend + vanilla JS frontend.
 
+
 ## Structure
 
 ```
@@ -25,3 +26,19 @@ frontend/
 
 
 ## Config
+
+Create `backend/.env` with your Stripe keys:
+```
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+FRONTEND_URL=http://localhost:3000
+```
+
+Set `STRIPE_PUBLISHABLE_KEY` in `frontend/config.js` or override globally:
+```javascript
+window.STRIPE_PUBLISHABLE_KEY = 'pk_test_...';
+```
+
+Get keys from https://dashboard.stripe.com/apikeys
+
