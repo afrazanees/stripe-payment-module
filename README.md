@@ -23,3 +23,5 @@ frontend/
 └── config.js
 ```
 
+
+## Config
