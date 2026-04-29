@@ -52,3 +52,10 @@ npm install
 npm start
 ```
 
+### Frontend
+```bash
+cd frontend
+python -m http.server 3000
+```
+
+Open `http://localhost:3000`
