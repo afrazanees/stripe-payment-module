@@ -42,3 +42,13 @@ window.STRIPE_PUBLISHABLE_KEY = 'pk_test_...';
 
 Get keys from https://dashboard.stripe.com/apikeys
 
+## Setup
+
+### Backend
+```bash
+cd backend
+cp .env.example .env
+npm install
+npm start
+```
+
