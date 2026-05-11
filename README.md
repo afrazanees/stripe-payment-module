@@ -59,3 +59,11 @@ python -m http.server 3000
 ```
 
 Open `http://localhost:3000`
+
+
+## Test
+
+- **Card:** `4242 4242 4242 4242`
+- **Expiry:** Any future date
+- **CVC:** Any 3 digits
+- **Country:** 2-char code (US, GB, etc)
