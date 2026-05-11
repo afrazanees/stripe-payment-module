@@ -67,3 +67,14 @@ Open `http://localhost:3000`
 - **Expiry:** Any future date
 - **CVC:** Any 3 digits
 - **Country:** 2-char code (US, GB, etc)
+
+
+## API Endpoints
+
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| POST | `/api/payment/create-intent` | Create payment intent |
+| POST | `/api/payment/confirm-intent` | Confirm payment |
+| GET | `/api/payment/intent/:intentId` | Get payment status |
+| POST | `/api/payment/create-payment-method` | Create payment method |
+| POST | `/api/webhooks/stripe` | Webhook handler |
